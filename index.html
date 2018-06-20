@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>The College Life</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">  
+      <div>
+        <a href="college.html" target="_college">
+        <button type="button" id="byCollegebtn" class="btn btn-primary btn-lg btn-block">Search by College</button></a>
+      </div>
+
+      <div>
+        <a href="criteria.html" target="_criteria">
+        <button type="button" id="byCriteriabtn" class="btn btn-secondary btn-lg btn-block">Search by Criteria</button></a>
+      </div>
+    </div>     
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script>
+  // Initialize Call-Me-Maybe Firebase
+    var config = {
+    apiKey: "AIzaSyBwiwpdyQ1i9shoLEasBY4NBuB2bofP4us",
+    authDomain: "team-6-project.firebaseapp.com",
+    databaseURL: "https://team-6-project.firebaseio.com",
+    projectId: "team-6-project",
+    storageBucket: "team-6-project.appspot.com",
+    messagingSenderId: "242908209026"
+    };
+    firebase.initializeApp(config);
+
+
+  </script>
+
+  </body>
+  </html>
