@@ -6,9 +6,13 @@
   <meta charset="UTF-8">
   <title>The College Life</title>
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap & CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <!--Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <!--JQuery-->
+  <script src="https://code.jquery.com/jquery.js"></script>
 
 </head>
 
@@ -26,12 +30,10 @@
       </div>
     </div>     
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
 
   <!-- Firebase-->
-  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
   <script>
+
   // Initialize Call-Me-Maybe Firebase
     var config = {
     apiKey: "AIzaSyBwiwpdyQ1i9shoLEasBY4NBuB2bofP4us",
@@ -40,11 +42,37 @@
     projectId: "team-6-project",
     storageBucket: "team-6-project.appspot.com",
     messagingSenderId: "242908209026"
-    };
-    firebase.initializeApp(config);
+  };
+  firebase.initializeApp(config);
 
+    var database = firebase.database();
+    var collegeCounter = 0;
+    var criteriaCounter = 0;
+
+    $("#byCollegebtn").on("click", function() {
+      event.preventDefault();
+      collegeCounter++;
+      database.ref().push({
+        CollegeClickCount: collegeCounter++,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+      })
+    });
+
+    $("#byCriteriabtn").on("click", function() {
+      event.preventDefault();
+      criteriaCounter++;
+      database.ref().push({
+        CriteriaClickCount: criteriaCounter,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+      })
+    });
+
+     database.ref().on("value", function(snapshot) {
+        console.log(snapshot.val());
+     },function(errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
 
   </script>
-
   </body>
   </html>
