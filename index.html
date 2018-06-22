@@ -62,7 +62,7 @@
       event.preventDefault();
       criteriaCounter++;
       database.ref().push({
-        CriteriaClickCount: criteriaCounter,
+        CriteriaClickCount: criteriaCounter++,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
       })
     });
