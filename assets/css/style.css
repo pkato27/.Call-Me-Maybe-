@@ -16,3 +16,53 @@ body {
     border: none; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.boxes {
+    background-color:whitesmoke;
+    border-style: solid;
+    border-width: 2px; 
+    padding: 10px;
+    height: 60px;
+}
+
+#search-box {
+    float: left;
+    padding: 5px;
+}
+
+#favorite-button {
+    float: left;
+    padding: 5px;
+
+}
+
+#sign-up {
+    float: left;
+    padding: 5px;
+
+}
+
+#map-box {
+    margin: 2px;
+    border-style: solid;
+    border-width: 2px;
+    height: 300px;
+    width: 650px;
+}
+
+#list-box {
+    margin: 5px;
+    border-style: solid;
+    border-width: 2px;
+    height: 300px;
+    width: 650px;
+}
+
+#criteria-box {
+    float: left;
+    margin: 5px;
+    border-style: solid;
+    border-width: 2px;
+    height: 600px;
+   
+}
